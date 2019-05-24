@@ -1,9 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
+import { render } from 'react-dom';
 
-import './style.module.css';
+import JoeBloggs from './components/joe-bloggs/webpack';
 
-const MyComponent = () => {
-  return (<div className='my'>MyComponent</div>);
-}
+const domRoot = document.getElementById('root');
 
-export default memo(MyComponent);
+render(<JoeBloggs />, domRoot);

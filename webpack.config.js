@@ -2,10 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: path.resolve(__dirname, 'src/components/joe-bloggs/index.js'),
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'webpack')
+    path: path.resolve(__dirname, 'src/components/joe-bloggs/webpack')
   },
   mode: 'development',
   optimization: {
