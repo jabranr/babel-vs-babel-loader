@@ -2,14 +2,15 @@
   "name": "babel-vs-babel-loader",
   "version": "1.0.0",
   "description": "",
-  "main": "src/weback/index.js",
-  "module": "src/babel/index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start:nowatch": "react-scripts start",
     "start": "concurrently \"npm run build:dev\" \"react-scripts start\"",
-    "build:babel": "babel src/components/joe-bloggs/index.js -d src/components/joe-bloggs/babel",
+    "prebuild": "rm -rf ./src/components/joe-bloggs/dist",
+    "build:babel": "babel ./src/components/joe-bloggs -d ./src/components/joe-bloggs/dist --ignore ./src/components/joe-bloggs/dist/**/*",
     "build:webpack": "webpack",
-    "build": "npm run build:babel && npm run build:webpack",
-    "build:dev": "npm run build:babel -- -w && npm run build:webpack -- --watch"
+    "build": "npm run build:babel && npm run build:webpack -- --env=production",
+    "build:dev": "npm run prebuild && concurrently \"npm run build:babel -- -w\" \"npm run build:webpack -- --env=development --watch\""
   },
   "author": "Jabran Rafique <hello@jabran.me>",
   "license": "ISC",
@@ -19,7 +20,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
-    "to-string-loader": "^1.1.5",
+    "replace-in-file-webpack-plugin": "^1.0.6",
     "webpack-cli": "^3.3.2"
   },
   "browserslist": {
@@ -33,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "optionalDependencies": {
+    "node-sass": "^4.12.0"
   }
 }

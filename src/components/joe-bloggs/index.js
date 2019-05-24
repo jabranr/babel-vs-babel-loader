@@ -1,9 +1,13 @@
 import React, { memo } from 'react';
 
-import { title } from './style.module.css';
+import { container, title } from './style.module.scss';
 
 const JoeBloggs = () => {
-  return (<h1 className={title}>JoeBloggs</h1>);
+  return (
+    <div className={container}>
+      <h1 className={title}>JoeBloggs</h1>
+    </div>
+  );
 }
 
 export default memo(JoeBloggs);

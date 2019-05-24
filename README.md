@@ -26,12 +26,8 @@ Then you can edit `src/index.js` to try each version of the build from `src/comp
 npm run build
 ```
 
-This will output results into `webpack/` and `babel/`.
+This will output results into `dist/`.
 
 # Objective
 
-Publish a `React` component to `npm` as a module. Intended targets are `es` and `commonjs` modules.
-
-# Problem
-
-[Check this issue for details](https://github.com/jabranr/babel-vs-babel-loader/issues/1)
+Publish a `React` component to `npm` as a module. Intended targets are `es6` and `commonjs` modules.
