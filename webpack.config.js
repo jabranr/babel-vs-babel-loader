@@ -10,8 +10,8 @@ module.exports = (env) => ({
   entry,
   output: {
     filename: 'cjs.js',
-    path: outputPath,
-    libraryTarget: 'commonjs2'
+    path: outputPath
+    // libraryTarget: 'commonjs2'
   },
   mode: env,
   optimization: {

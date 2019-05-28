@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 
-import { container, title } from './style.module.scss';
+import style from './style.module.scss';
 
 const JoeBloggs = () => {
   return (
-    <div className={container}>
-      <h1 className={title}>JoeBloggs</h1>
+    <div className={style.container}>
+      <h1 className={style.title}>JoeBloggs</h1>
     </div>
   );
 }
